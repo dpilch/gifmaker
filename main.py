@@ -7,7 +7,7 @@ Dane Pilcher
 
 #!/usr/bin/python
 
-import sys, getopt
+import sys, getopt, argparse
 
 from moviepy.editor import *
 
@@ -18,18 +18,20 @@ def main(argv):
     start_time_sec = 0
     start_time_min = 0
     end_time_sec = 0
-    start_time_min 0
-    input_file_path = argv[0]
-    raw_start_time = int(argv[1])
-    raw_end_time = int(argv[2])
-    start_point_min = 0
-    start_point_second = raw_start_time
-    end_point_min = 0
-    end_point_second = raw_end_time
+    start_time_min = 0
+
+    parser = argparse.ArgumentParser(description='Create a GIF.')
+    parser.add_argument('filename', metavar='filename', type=str, help='Filepath to input video')
+    parser.add_argument('start_time', metavar='start-time', type=str, help='Start time of GIF.')
+    parser.add_argument('end_time', metavar='end-time', type=str, help='End time of GIF.')
+    
+    
+    args = parser.parse_args()
+    '''
     clip = (VideoFileClip(input_file_path)
             .subclip((start_point_min,start_point_second),(end_point_min,end_point_second)))
     clip.write_gif("newgif.gif")
-
+    '''
 def raw_time_to_sec(raw_time):
     '''takes in a string raw_time in the format 00:00 and returns an
     integer value in seconds'''
