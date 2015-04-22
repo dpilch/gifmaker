@@ -7,15 +7,16 @@ Dane Pilcher
 
 #!/usr/bin/python
 
-import sys
+import sys, getopt
 
 from moviepy.editor import *
 
-def main():
+def main(argv):
     '''main function'''
-    file_path = sys.argv[1]
-    raw_start_time = int(sys.argv[2])
-    raw_end_time = int(sys.argv[3])
+    
+    file_path = sys.argv[0]
+    raw_start_time = int(sys.argv[1])
+    raw_end_time = int(sys.argv[2])
     start_point_min = 0
     start_point_second = raw_start_time
     end_point_min = 0
@@ -31,4 +32,5 @@ def raw_time_to_sec(raw_time):
     time += int(raw_time[2:])
     return time
 
-main()
+if __name__ == "__main__":
+    main(sys.argv[1:])
