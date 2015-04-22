@@ -13,15 +13,20 @@ from moviepy.editor import *
 
 def main(argv):
     '''main function'''
-    
-    file_path = argv[0]
+    input_file_path = ''
+    output_file_path = ''
+    start_time_sec = 0
+    start_time_min = 0
+    end_time_sec = 0
+    start_time_min 0
+    input_file_path = argv[0]
     raw_start_time = int(argv[1])
     raw_end_time = int(argv[2])
     start_point_min = 0
     start_point_second = raw_start_time
     end_point_min = 0
     end_point_second = raw_end_time
-    clip = (VideoFileClip(file_path)
+    clip = (VideoFileClip(input_file_path)
             .subclip((start_point_min,start_point_second),(end_point_min,end_point_second)))
     clip.write_gif("newgif.gif")
 
