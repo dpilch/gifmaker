@@ -21,11 +21,17 @@ def main(argv):
     start_time_min = 0
 
     parser = argparse.ArgumentParser(description='Create a GIF.')
-    parser.add_argument('filename', metavar='filename', type=str, help='Filepath to input video')
-    parser.add_argument('start_time', metavar='start-time', type=str, help='Start time of GIF.')
-    parser.add_argument('end_time', metavar='end-time', type=str, help='End time of GIF.')
+    # positional args
+    parser.add_argument('filename', metavar='filename', type=str,
+                        help='filepath to input video')
+    parser.add_argument('start_time', metavar='start-time', type=str,
+                        help='start time of GIF')
+    parser.add_argument('end_time', metavar='end-time', type=str,
+                        help='end time of GIF')
     
-    parser.add_argument('-v', '--verbose', action='store_true', help='Turn on verbose output')
+    # optional args 
+    parser.add_argument('-v', '--verbose', action='store_true',
+                        help='turn on verbose output')
     
     args = parser.parse_args()
     '''
