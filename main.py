@@ -9,7 +9,6 @@ from moviepy.editor import *
 
 def main():
     '''main function'''
-    print "gifmaker"
     file_path = raw_input("Filepath:")
     '''
     start_point_raw = raw_input("Start point:")
