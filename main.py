@@ -5,6 +5,10 @@ main.py
 Dane Pilcher
 '''
 
+#!/usr/bin/python
+
+import sys
+
 from moviepy.editor import *
 
 def main():
