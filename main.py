@@ -14,9 +14,9 @@ from moviepy.editor import *
 def main(argv):
     '''main function'''
     
-    file_path = sys.argv[0]
-    raw_start_time = int(sys.argv[1])
-    raw_end_time = int(sys.argv[2])
+    file_path = argv[0]
+    raw_start_time = int(argv[1])
+    raw_end_time = int(argv[2])
     start_point_min = 0
     start_point_second = raw_start_time
     end_point_min = 0
