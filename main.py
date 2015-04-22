@@ -25,6 +25,7 @@ def main(argv):
     parser.add_argument('start_time', metavar='start-time', type=str, help='Start time of GIF.')
     parser.add_argument('end_time', metavar='end-time', type=str, help='End time of GIF.')
     
+    parser.add_argument('-v', '--verbose', action='store_true', help='Turn on verbose output')
     
     args = parser.parse_args()
     '''
