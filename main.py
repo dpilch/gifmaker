@@ -18,7 +18,7 @@ def main(argv):
     start_time_sec = 0
     start_time_min = 0
     end_time_sec = 0
-    start_time_min = 0
+    end_time_min = 0
 
     parser = argparse.ArgumentParser(description='Create a GIF.')
     # positional args
@@ -33,12 +33,18 @@ def main(argv):
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='turn on verbose output')
     
+    # get args
     args = parser.parse_args()
-    '''
+
+    input_file_path = args.filename
+    start_time_sec = int(args.start_time)
+    end_time_sec = int(args.end_time)
+    
     clip = (VideoFileClip(input_file_path)
-            .subclip((start_point_min,start_point_second),(end_point_min,end_point_second)))
+            .subclip((start_time_min,start_time_sec),
+                     (end_time_min,end_time_sec)))
     clip.write_gif("newgif.gif")
-    '''
+    
 def raw_time_to_sec(raw_time):
     '''takes in a string raw_time in the format 00:00 and returns an
     integer value in seconds'''
