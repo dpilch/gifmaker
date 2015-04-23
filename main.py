@@ -7,7 +7,7 @@ Dane Pilcher
 
 #!/usr/bin/python
 
-import sys, getopt, argparse
+import sys, argparse, os
 
 from moviepy.editor import *
 
@@ -43,7 +43,12 @@ def main():
     
     # get args
     args = parser.parse_args()
-    args.v
+    
+    # supress output if verbose is off
+    sys.stdout = open(os.devnull, 'w')
+    if args.verbose:
+        sys.stdout = sys.__stdout__
+    
     input_file_path = args.filename
     start_time_sec = raw_time_to_sec(args.start_time)
     end_time_sec = raw_time_to_sec(args.end_time)
@@ -53,6 +58,8 @@ def main():
                      (end_time_min,end_time_sec)))
     clip.write_gif("newgif.gif")
     
+    sys.stdout = sys.__stdout__
+
 def raw_time_to_sec(raw_time):
     '''takes in a string raw_time in the format 00:00.00 and returns an
     integer value in seconds'''
