@@ -39,7 +39,8 @@ def main():
                         help='turn off GIF replay')
     parser.add_argument('-l', '--loop', action='store_true',
                         help='attempt to make a looping GIF')
-    
+    parser.add_argument('-o', '--output', type=str,
+                        help='filepath to output file')
     
     # get args
     args = parser.parse_args()
@@ -48,6 +49,8 @@ def main():
     sys.stdout = open(os.devnull, 'w')
     if args.verbose:
         sys.stdout = sys.__stdout__
+
+    # if args.
     
     input_file_path = args.filename
     start_time_sec = raw_time_to_sec(args.start_time)
