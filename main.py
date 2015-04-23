@@ -11,7 +11,7 @@ import sys, getopt, argparse
 
 from moviepy.editor import *
 
-def main(argv):
+def main():
     '''main function'''
     input_file_path = ''
     output_file_path = ''
@@ -38,7 +38,8 @@ def main(argv):
                         help='turn off GIF replay')
     parser.add_argument('-l', '--loop', action='store_true',
                         help='attempt to make a looping GIF')
-
+    
+    
     # get args
     args = parser.parse_args()
 
@@ -59,4 +60,4 @@ def raw_time_to_sec(raw_time):
     return time
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    main()
