@@ -32,7 +32,13 @@ def main(argv):
     # optional args 
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='turn on verbose output')
-    
+    parser.add_argument('-r', '--replay', action='store_true',
+                        help='replay GIF (default)')
+    parser.add_argument('-R', '--no-replay', action='store_true',
+                        help='turn off GIF replay')
+    parser.add_argument('-l', '--loop', action='store_true',
+                        help='attempt to make a looping GIF')
+
     # get args
     args = parser.parse_args()
 
