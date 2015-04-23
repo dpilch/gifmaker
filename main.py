@@ -13,13 +13,14 @@ from moviepy.editor import *
 
 def main():
     '''main function'''
+    
     input_file_path = ''
     output_file_path = ''
     start_time_sec = 0
     start_time_min = 0
     end_time_sec = 0
     end_time_min = 0
-
+    
     parser = argparse.ArgumentParser(description='Create a GIF.')
     # positional args
     parser.add_argument('filename', metavar='filename', type=str,
@@ -42,7 +43,7 @@ def main():
     
     # get args
     args = parser.parse_args()
-
+    args.v
     input_file_path = args.filename
     start_time_sec = raw_time_to_sec(args.start_time)
     end_time_sec = raw_time_to_sec(args.end_time)
