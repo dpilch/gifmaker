@@ -44,8 +44,8 @@ def main():
     args = parser.parse_args()
 
     input_file_path = args.filename
-    start_time_sec = int(args.start_time)
-    end_time_sec = int(args.end_time)
+    start_time_sec = raw_time_to_sec(args.start_time)
+    end_time_sec = raw_time_to_sec(args.end_time)
     
     clip = (VideoFileClip(input_file_path)
             .subclip((start_time_min,start_time_sec),
@@ -53,10 +53,9 @@ def main():
     clip.write_gif("newgif.gif")
     
 def raw_time_to_sec(raw_time):
-    '''takes in a string raw_time in the format 00:00 and returns an
+    '''takes in a string raw_time in the format 00:00.00 and returns an
     integer value in seconds'''
-    time = int(raw_time[:2]) * 60
-    time += int(raw_time[2:])
+    time = float(raw_time[3:])
     return time
 
 if __name__ == "__main__":
