@@ -1,0 +1,3 @@
+# gifmaker
+
+Make a GIF.
