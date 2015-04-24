@@ -5,7 +5,7 @@ from distutils.core import setup
 
 setup(
     name='gifmaker',
-    version=0.0.1,
+    version='0.1.0',
     url='https://github.com/dpilch/gifmaker',
     license='LICENCE',
     author='Dane Pilcher',
