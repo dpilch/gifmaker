@@ -39,7 +39,7 @@ def main():
                         help='turn off GIF replay')
     parser.add_argument('-l', '--loop', action='store_true',
                         help='attempt to make a looping GIF')
-    parser.add_argument('-o', '--output', type=str,
+    parser.add_argument('-o', '--output', metavar='filename', type=str,
                         help='filepath to output file')
     
     # get args
