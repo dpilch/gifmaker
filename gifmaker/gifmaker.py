@@ -62,7 +62,7 @@ def main():
     end_time_sec = raw_time_to_sec(args.end_time)
     end_time_min = raw_time_to_min(args.end_time)
     
-    clip = (VideoFileClip(input_file_path)
+    clip = (VideoFileClip(input_file_path, audio=False)
             .subclip((start_time_min,start_time_sec),
                      (end_time_min,end_time_sec)).resize(0.4))
     try:
