@@ -42,6 +42,10 @@ def main():
                         help='attempt to make a looping GIF')
     parser.add_argument('-o', '--output', metavar='filename', type=str,
                         help='filepath to output file')
+    parser.add_argument('-s', '--size',  type=float,
+                        help='resize the GIF')
+    parser.add_argument('-f', '--fps' type=int,
+                        help='framerate of the GIF')
     
     # get args
     args = parser.parse_args()
