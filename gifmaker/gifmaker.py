@@ -53,6 +53,9 @@ def main():
     # if args.
     
     input_file_path = args.filename
+    output_file_path = input_file_path[:-3] + 'gif'
+    if args.output:
+        output_file_path = args.output
     start_time_sec = raw_time_to_sec(args.start_time)
     start_time_min = raw_time_to_min(args.start_time)
     end_time_sec = raw_time_to_sec(args.end_time)
@@ -61,7 +64,8 @@ def main():
     clip = (VideoFileClip(input_file_path)
             .subclip((start_time_min,start_time_sec),
                      (end_time_min,end_time_sec)))
-    clip.write_gif("newgif.gif")
+    
+    clip.write_gif(output_file_path)
     
     sys.stdout = sys.__stdout__
 
