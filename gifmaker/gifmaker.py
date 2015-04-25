@@ -68,7 +68,7 @@ def main():
     try:
         clip.write_gif(output_file_path)
     except:
-        print 'Error'
+        sys.stderr.write('Error\n')
     
     sys.stdout = sys.__stdout__
 
