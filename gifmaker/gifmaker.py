@@ -64,8 +64,10 @@ def main():
     clip = (VideoFileClip(input_file_path)
             .subclip((start_time_min,start_time_sec),
                      (end_time_min,end_time_sec)))
-    
-    clip.write_gif(output_file_path)
+    try:
+        clip.write_gif(output_file_path)
+    except:
+        print 'Error'
     
     sys.stdout = sys.__stdout__
 
