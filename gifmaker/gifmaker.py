@@ -54,7 +54,9 @@ def main():
     
     input_file_path = args.filename
     start_time_sec = raw_time_to_sec(args.start_time)
+    start_time_min = raw_time_to_min(args.start_time)
     end_time_sec = raw_time_to_sec(args.end_time)
+    end_time_min = raw_time_to_min(args.end_time)
     
     clip = (VideoFileClip(input_file_path)
             .subclip((start_time_min,start_time_sec),
@@ -63,9 +65,15 @@ def main():
     
     sys.stdout = sys.__stdout__
 
+def raw_time_to_min(raw_time):
+    '''takes in a string raw_time in the format 00:00.00 and returns a int 
+    alue in minutes'''
+    time = float(raw_time[:2])
+    return time
+
 def raw_time_to_sec(raw_time):
-    '''takes in a string raw_time in the format 00:00.00 and returns an
-    integer value in seconds'''
+    '''takes in a string raw_time in the format 00:00.00 and returns a
+    float value in seconds'''
     time = float(raw_time[3:])
     return time
 
