@@ -63,7 +63,7 @@ def main():
     
     clip = (VideoFileClip(input_file_path)
             .subclip((start_time_min,start_time_sec),
-                     (end_time_min,end_time_sec)))
+                     (end_time_min,end_time_sec))).resize(0.3)
     try:
         clip.write_gif(output_file_path)
     except:
