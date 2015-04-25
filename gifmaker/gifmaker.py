@@ -9,6 +9,7 @@ Dane Pilcher
 
 import sys, argparse, os
 
+from PIL import *
 from moviepy.editor import *
 
 def main():
@@ -63,7 +64,7 @@ def main():
     
     clip = (VideoFileClip(input_file_path)
             .subclip((start_time_min,start_time_sec),
-                     (end_time_min,end_time_sec))).resize(0.3)
+                     (end_time_min,end_time_sec)).resize(0.4))
     try:
         clip.write_gif(output_file_path)
     except:
