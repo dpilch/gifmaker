@@ -26,9 +26,9 @@ def main():
     # positional args
     parser.add_argument('filename', metavar='filename', type=str,
                         help='filepath to input video')
-    parser.add_argument('start_time', metavar='start-time', type=str,
+    parser.add_argument('start_time', metavar='<start-time 00:00.00>', type=str,
                         help='start time of GIF')
-    parser.add_argument('end_time', metavar='end-time', type=str,
+    parser.add_argument('end_time', metavar='<end-time 00:00.00>', type=str,
                         help='end time of GIF')
     
     # optional args 
@@ -44,7 +44,7 @@ def main():
                         help='filepath to output file')
     parser.add_argument('-s', '--size',  type=float,
                         help='resize the GIF')
-    parser.add_argument('-f', '--fps' type=int,
+    parser.add_argument('-f', '--fps', type=int,
                         help='framerate of the GIF')
     
     # get args
