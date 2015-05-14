@@ -46,6 +46,8 @@ def main():
                         help='resize the GIF')
     parser.add_argument('-f', '--fps', type=int,
                         help='framerate of the GIF')
+    parser.add_argument('-t', '--text', metavar='overlay', type=str,
+                        help='text overlay')
     
     # get args
     args = parser.parse_args()
